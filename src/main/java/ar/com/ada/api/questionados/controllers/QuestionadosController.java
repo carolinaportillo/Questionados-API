@@ -40,6 +40,7 @@ public class QuestionadosController {
     public ResponseEntity<RespuestaVerificada> verificarRespuesta(@RequestBody RespuestaAVerificar respuestaAVerificar){
 
         RespuestaVerificada respuestaVerificada = new RespuestaVerificada();
+        
         if (service.verificarRespuesta(respuestaAVerificar.preguntaId, respuestaAVerificar.respuestaId)) {
             respuestaVerificada.esCorrecta = true;
         } else {

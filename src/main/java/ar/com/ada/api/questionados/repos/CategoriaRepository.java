@@ -12,5 +12,5 @@ public interface CategoriaRepository extends JpaRepository<Categoria, Integer>{
 
     boolean existsByNombre(String nombre);
     
-    Categoria findById(int id);
+    Categoria findByCategoriaId(Integer id);
 }

@@ -18,7 +18,7 @@ public class CategoriaService {
         return repo.findAll();
     }
 
-    public Categoria buscarCategoria(Integer categoriaId){
+    /*public Categoria buscarCategoria(Integer categoriaId){
 
         Optional<Categoria> resultado = repo.findById(categoriaId);
         Categoria categoria = null;
@@ -28,11 +28,11 @@ public class CategoriaService {
 
         return categoria;
 
-    }
+    }*/
 
-    public Categoria buscarCategoriaV2(Integer categoriaId){
+    public Categoria buscarCategoria(Integer categoriaId){
 
-        Categoria categoria = repo.findById(categoriaId.intValue());
+        Categoria categoria = repo.findByCategoriaId(categoriaId.intValue());
 
         return categoria;
 
@@ -56,5 +56,18 @@ public class CategoriaService {
 
     public boolean existeV2(String nombre) {
         return repo.existsByNombre(nombre);
+    }
+
+    public void modificarCategoria(Integer id, String nombreNuevo, String descripcionNueva) {
+        Categoria categoriaAModificar = this.buscarCategoria(id);
+        categoriaAModificar.setNombre(nombreNuevo);
+        categoriaAModificar.setDescripcion(descripcionNueva);
+        repo.save(categoriaAModificar);;
+
+    }
+
+    public void eliminarCategoriaPorId(Integer id) {
+        repo.deleteById(id);
+
     }
 }

@@ -57,6 +57,7 @@ public class Pregunta {
 
     public void agregarRespuesta(Respuesta respuesta){ //se crea el metodo para establecer la RB con respuesta.java
         this.opciones.add(respuesta);
+
     }
 
     

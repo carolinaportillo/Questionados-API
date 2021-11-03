@@ -5,17 +5,17 @@ import javax.persistence.*;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
-@Table(name = "pregunta")
+@Table(name = "respuesta")
 public class Respuesta {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "respuesta_id")
+    @Column(name ="respuesta_id")
     private Integer respuestaId;
 
     private String texto;
 
-    @Column(name = "es_correcta")
+    @Column(name ="es_correcta")
     private boolean esCorrecta;
 
 
